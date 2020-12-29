@@ -20,6 +20,7 @@ const LoginButton = () => {
             </div>
         )
         // Estado de no autenticado
+        // Si no lo está devolvemos un mensaje para que se autentique mediante auth0
     } else {
         return (
             <div>
