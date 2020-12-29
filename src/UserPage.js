@@ -8,8 +8,15 @@ const UserPage = () => {
         return(
             <Container>
                 <div>
-                    <h1>Hola {user.given_name}</h1>
-                    <p>Esta es tu página de usuario</p>
+                    <div>
+                        <h1>Hola {user.given_name}</h1>
+                        <p>Esta es tu página de usuario</p>
+                    </div>
+
+                    <div>
+                        <img src={user.picture} alt={user.given_name}/>
+                    </div>
+
                 </div>
             </Container>
         )

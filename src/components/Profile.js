@@ -26,7 +26,7 @@ const LoginButton = () => {
     if(isAuthenticated) {
         return(
             <Container>
-                <Row>
+                <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {productos.map(producto => (
                         <ProductCard key={producto.productoId}
                                      title={producto.nombre}

@@ -36,7 +36,7 @@ const ProductList = ({match}) => {
             <Container>
                 <h6>100% hechos a mano</h6>
                 <h2>Categoria {tipo}</h2>
-                <Row>
+                <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {productos.map(producto => (
                         <ProductCard
                             key={producto.productoId}

@@ -9,45 +9,58 @@ const Header = () => {
 
     if(isAuthenticated) {
         return (
-            <Nav justify variant="tabs" defaultActiveKey="/home">
+            <Nav className={styles.navContainer}>
                 <Nav.Item>
-                    <Nav.Link href="/">Inicio</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/">Inicio</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/productos">Todos los productos</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/productos">Productos</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2">Link</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/quienes-somos">Quiénes Somos</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="disabled" disabled>
-                        Disabled
+                    <Nav.Link className={styles.navLink} href="/productos">Categorías</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink}>|</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/perfil">
+                        {user.given_name}
+                    </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} onClick={() => logout()}>
+                        Salir
                     </Nav.Link>
                 </Nav.Item>
             </Nav>
         )
     } else {
         return (
-            <header className={styles.header}>
-
-                <div>
-                    <a href="/"><img src={logo} alt=""/></a>
-                </div>
-
-                <nav>
-                    <ul>
-                        <li><a href="/productos/mascarillas" className={styles.navLinks}>Mascarillas</a></li>
-                        <li><a href="/productos/pantalones" className={styles.navLinks}>Ropa</a></li>
-                        <li><a href="/productos/bolsas" className={styles.navLinks}>Bolsas</a></li>
-                        <li><a href="/productos/basicos">Básicos</a></li>
-                    </ul>
-                </nav>
-
-                <div>
-                    <a href="/login" onClick={() => loginWithRedirect()}>Iniciar sesión</a>
-                </div>
-
-            </header>
+            <Nav className={styles.navContainer}>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/">Inicio</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/productos">Productos</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/quienes-somos">Quiénes Somos</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/productos">Categorías</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink}>|</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link className={styles.navLink} href="/perfil" onClick={() => loginWithRedirect()}>
+                        Iniciar sesión
+                    </Nav.Link>
+                </Nav.Item>
+            </Nav>
         )
     }
 
