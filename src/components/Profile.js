@@ -19,6 +19,7 @@ const LoginButton = () => {
                 <p>{user.email}</p>
             </div>
         )
+        // Estado de no autenticado
     } else {
         return (
             <div>
