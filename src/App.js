@@ -1,22 +1,31 @@
-import './App.css';
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton";
+import './App.module.css';
+import styles from './components/css/loading.module.css';
 import Profile from "./components/Profile";
+import Header from "./components/Header";
 import {useAuth0} from "@auth0/auth0-react";
 
-function App() {
+const App = () => {
 
-    const {isLoading} = useAuth0();
+    const { isLoading } = useAuth0();
 
-    if (isLoading) return <div>Loading...</div>
+    while (isLoading) {
+        return (
+            <div className={styles.animationContainer}>
+                <div className={styles.container}>
+                    <div className={styles.yellow}></div>
+                    <div className={styles.red}></div>
+                    <div className={styles.blue}></div>
+                    <div className={styles.violet}></div>
+                </div>
+            </div>
+        )
+    }
 
-  return (
-      <div>
-        <LoginButton />
-        <LogoutButton />
-        <Profile />
-      </div>
-  );
+    return (
+        <div>
+            <Header />
+        </div>
+    );
 }
 
 export default App;

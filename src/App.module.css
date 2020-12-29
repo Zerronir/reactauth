@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.loginButton {
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    width: 120px;
+    cursor: pointer;
+    border: none;
+    background-color: lightgreen;
+    border-radius: 5px;
+}
+
+.logoutButton {
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    width: 120px;
+    cursor: pointer;
+    border: none;
+    background-color: lightcoral;
+    border-radius: 5px;
+}
+
+
