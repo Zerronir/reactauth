@@ -5,6 +5,7 @@ import {Container, Card, Row, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import queryString from 'query-string'
 import { useLocation } from 'react-router-dom'
+import ProductCard from "./ProductCard";
 
 const ProductList = ({match}) => {
     const { user }  = useAuth0();
@@ -30,19 +31,19 @@ const ProductList = ({match}) => {
 
     return (
         <div>
-            Categoria {tipo}
+
 
             <Container>
+                <h6>100% hechos a mano</h6>
+                <h2>Categoria {tipo}</h2>
                 <Row>
                     {productos.map(producto => (
-                        <Card>
-                            <Card.Title>
-                                {producto.nombre}
-                            </Card.Title>
-                            <Card.Text>
-                                {producto.precio} €
-                            </Card.Text>
-                        </Card>
+                        <ProductCard
+                            key={producto.productoId}
+                            title={producto.nombre}
+                            price={producto.precio}
+                            cat={producto.tipo}
+                        />
                     ))}
                 </Row>
             </Container>

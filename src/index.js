@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './components/Home';
 import Profile from './components/Profile';
 import ProductList from './components/ProductList';
 import reportWebVitals from './reportWebVitals';
 import {Auth0Provider} from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import UserPage from "./UserPage";
 
 // Importamos los datos para poder hacer la autenticación del usuario
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -21,9 +23,12 @@ ReactDOM.render(
 
       <Router>
             <App />
-            <Route path="/" exact component={Profile} />
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/productos" exact component={Profile} />
             <Route path="/productos/:tipo" exact component={ProductList} />
+            <Route path="/perfil" exact component={UserPage} />
       </Router>
+
   </React.StrictMode>
 </Auth0Provider>,
   document.getElementById('root')

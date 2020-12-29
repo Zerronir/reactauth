@@ -1,7 +1,7 @@
 :root {
-    --yellow: #feb60a;
+    --yellow-ball: #f2c61d;
     --red: #ff0062;
-    --blue: #00dbf9;
+    --blue-ball: #010135;
     --violet: #da00f7;
 }
 .animationContainer {
@@ -19,16 +19,15 @@ div.container {
     align-items: center;
 }
 
-div.container > div {
-    width: 3vw;
-    height: 3vw;
-    border-radius: 100%;
-    margin: 2vw;
+div.container > img {
     background-image: linear-gradient(145deg, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0) 100%);
     animation: bounce 1.5s 0.5s linear infinite;
 }
+
+
+
 .yellow {
-    background-color: var(--yellow);
+    background-color: var(--yellow-ball);
 }
 
 .red {
@@ -37,7 +36,7 @@ div.container > div {
 }
 
 .blue {
-    background-color: var(--blue);
+    background-color: var(--blue-ball);
     animation-delay: 0.2s;
 }
 
@@ -57,6 +56,6 @@ div.container > div {
     }
     75% {
         filter: blur(3px);
-        transform: scale(1.4);
+        transform: scale(1.6);
     }
 }
