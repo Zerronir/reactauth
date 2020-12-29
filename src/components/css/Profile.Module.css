@@ -1,0 +1,8 @@
+.userInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.userInfo img {
+    border-radius: 50%;
+}
