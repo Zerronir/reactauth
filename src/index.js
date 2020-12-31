@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import {Auth0Provider} from '@auth0/auth0-react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UserPage from "./UserPage";
+import ProductPage from "./components/ProductPage";
 
 // Importamos los datos para poder hacer la autenticación del usuario
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
@@ -27,6 +28,7 @@ ReactDOM.render(
             <Route path="/productos" exact component={Profile} />
             <Route path="/productos/:tipo" exact component={ProductList} />
             <Route path="/perfil" exact component={UserPage} />
+            <Route path="/producto/ver/:id" exact component={ProductPage} />
       </Router>
 
   </React.StrictMode>

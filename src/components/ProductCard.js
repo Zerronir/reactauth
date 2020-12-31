@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, Button} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 
 const ProductCard = ({title, price, cat, id}) => {
     return (
@@ -10,6 +10,7 @@ const ProductCard = ({title, price, cat, id}) => {
             </Card.Text>
             <Card.Text>
                 <a href={`/productos/${cat}`}>Ver más de esta categoría</a>
+                <a href={`/producto/ver/${id}`}>Ver producto</a>
             </Card.Text>
         </Card>
     )

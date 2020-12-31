@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {useAuth0} from "@auth0/auth0-react";
 import styles from './css/Profile.Module.css';
-import {Container, Card, Row, Button, Col} from 'react-bootstrap';
+import {Container, Card, Row, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from "./ProductCard";
-import Footer from "../Footer";
 
 const LoginButton = () => {
-    const { user, isAuthenticated }  = useAuth0();
+    const { isAuthenticated }  = useAuth0();
 
     const [productos, setProductos] = useState([]);
 
@@ -29,6 +28,7 @@ const LoginButton = () => {
                 <Row style={{ display: 'flex', justifyContent: 'space-between' }}>
                     {productos.map(producto => (
                         <ProductCard key={producto.productoId}
+                                     id={producto.productoId}
                                      title={producto.nombre}
                                      price={producto.precio}
                                      cat={producto.tipo}
@@ -56,6 +56,7 @@ const LoginButton = () => {
                                             <Button href={`/productos/${producto.tipo}`}>
                                                 Ver más de esta categoría
                                             </Button>
+                                            <Button href={`/producto/ver/${producto.productoId}`}>Ver producto</Button>
                                         </Card.Text>
 
                                     </Card.Body>
